@@ -1,4 +1,25 @@
-lass LightBulb(Switchable):
+from abc import ABC, abstractmethod
+from typing import List
+
+class Switchable(ABC):
+
+    @abstractmethod
+    def __init__(self):
+        pass
+
+    @abstractmethod
+    def turn_on(self):
+        pass
+
+    @abstractmethod
+    def turn_off(self):
+        pass
+
+    @abstractmethod
+    def print_state(self):
+        pass
+        
+class LightBulb(Switchable):
     def __init__(self, state:str):
         allowed_states = ["On", "Off"]
         if state in allowed_states:
